@@ -1,8 +1,8 @@
-# Tabellla: dipartimenti
+# Tabella: dipartimenti
 
 | Nome colonna        | Tipo di Dato | Attributi                       |
 | ------------------- | ------------ | ------------------------------- |
-| id (PK)             | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
+| id (PK)             | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
 | nome                | VARCHAR(50)  | NOT NULL                        |
 | numero_corsi_laurea | VARCHAR(50)  | NOT NULL                        |
 | descrizione         | TEXT         | NULL                            |
@@ -11,12 +11,12 @@
 | numero              | VARCHAR(15)  | NULL                            |
 | sito_web            | VARCHAR(50)  | NULL                            |
 
-# Tabellla: corsi_di_laurea
+# Tabella: corsi_di_laurea
 
 | Nome colonna         | Tipo di Dato | Attributi                       |
 | -------------------- | ------------ | ------------------------------- |
-| id (PK)              | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
-| dipartimento_id (FK) | INT          | NOT NULL, UNIQUE                |
+| id (PK)              | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
+| dipartimento_id (FK) | BIGINT          |                                 |
 | nome                 | VARCHAR(50)  | NOT NULL                        |
 | numero_corsi         | TINYINT      | NOT NULL                        |
 | durata               | TINYINT      | NULL                            |
@@ -24,44 +24,44 @@
 | lingua               | VARCHAR(20)  | NULL                            |
 | sito_web             | VARCHAR(50)  | NULL                            |
 
-# Tabellla: corsi
+# Tabella: corsi
 
 | Nome colonna            | Tipo di Dato | Attributi                       |
 | ----------------------- | ------------ | ------------------------------- |
-| id (PK)                 | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
-| corso_di_laurea_id (FK) | INT          | NOT NULL, UNIQUE                |
+| id (PK)                 | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
+| corso_di_laurea_id (FK) | BIGINT          |                                 |
 | nome                    | VARCHAR(50)  | NOT NULL                        |
 | codice                  | TINYINT      | NULL                            |
 | periodo                 | VARCHAR(20)  | NULL                            |
 | cfu                     | TEXT         | NULL                            |
 | settore                 | VARCHAR(50)  | NULL                            |
 
-# Tabellla: insegnanti
+# Tabella: insegnanti
 
 | Nome colonna | Tipo di Dato | Attributi                       |
 | ------------ | ------------ | ------------------------------- |
-| id (PK)      | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
+| id (PK)      | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
 | nome         | VARCHAR(50)  | NOT NULL                        |
 | cognome      | VARCHAR(50)  | NOT NULL                        |
 | email        | VARCHAR(50)  | NULL                            |
 | telefono     | VARCHAR(15)  | NULL                            |
 
-# Tabellla: esame
+# Tabella: esami
 
 | Nome colonna | Tipo di Dato | Attributi                       |
 | ------------ | ------------ | ------------------------------- |
-| id (PK)      | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
+| id (PK)      | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
 | data         | DATE         | NOT NULL                        |
 | orario       | TIME         | NOT NULL                        |
 | aula         | VARCHAR(20)  | NOT NULL                        |
 | voto         | TINYINT      | NULL                            |
 
-# Tabellla: studente
+# Tabella: studenti
 
 | Nome colonna            | Tipo di Dato | Attributi                       |
 | ----------------------- | ------------ | ------------------------------- |
-| id (PK)                 | INT          | NOT NULL, UNIQUE, AUTOINCREMENT |
-| corso_di_laurea_id (FK) | INT          | NOT NULL, UNIQUE                |
+| id (PK)                 | BIGINT       | NOT NULL, UNIQUE, AUTOINCREMENT |
+| corso_di_laurea_id (FK) | BIGINT          |                                 |
 | nome                    | VARCHAR(50)  | NOT NULL                        |
 | cognome                 | VARCHAR(50)  | NOT NULL                        |
 | matricola               | INT          | NOT NULL                        |
